@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: "Orbitron", sans-serif;
+    /* font-family: "Rubik", sans-serif; */
+    /* background: #2B1C40; */
+    background: #2B1C40;
+    color: #fff;
+}
+
+.marqueeContainer {
+    background: #fff;
+    position: relative;
+    color: #2B1C40 !important;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 2px 0;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    background: none !important;
+}
+
+
+
+.soundIcon {
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    z-index: 99;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+p {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.offcanvas.show {
+    height: 100%;
+    background: #2B1C40;
+    color: #fff;
+}
+
+.swiper-pagination-bullet {
+    height: 5px !important;
+    width: 50px !important;
+    border-radius: 5px !important;
+    background: #fff !important;
+    margin-bottom: 20px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #2B1C40 !important;
+
+
+}
+
+.btn-close {
+    margin-top: 20px !important;
+    --bs-btn-close-bg: url('./assets/img/closeBtn.png') !important;
+}
+
+button {
+    border: none;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+@media screen and (max-width:500px) {
+
+    .swiper-pagination-bullet {
+        height: 5px !important;
+        width: 25px !important;
+
+    }
+}

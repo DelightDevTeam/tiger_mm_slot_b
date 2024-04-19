@@ -1,0 +1,63 @@
+.navbarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: 0 -1px 3px rgb(0, 0, 0, 0.7);
+    /* background: linear-gradient(to bottom, #630D93, #3A107D); */
+    background: #2B1C40;
+    cursor: pointer;
+
+}
+
+
+.navbar .logo {
+    width: 60px;
+    height: 60px;
+}
+
+.loginBtn {
+    background: linear-gradient(to right, rgb(204, 69, 196), rgb(121, 68, 188), rgb(66, 119, 182));
+    color: #fff;
+    font-size: 13px;
+
+}
+
+.navIcon {
+    font-size: 28px;
+}
+
+
+@media screen and (max-width:500px) {
+    .navLink {
+        font-size: 18px;
+    }
+
+    .accInfo {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .loginBtn {
+        font-size: 12px;
+    }
+
+    .navIcon {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .navIcon {
+        font-size: 21px;
+    }
+}
+
+@media screen and (max-width:390px) {
+    .navbar .logo {
+        width: 45px;
+        height: 45px;
+    }
+}

@@ -1,0 +1,28 @@
+.logins {
+    margin-top: 10px;
+    width: 390px;
+}
+
+@media screen and (max-width:390px) {
+    .logins {
+        width: 90%;
+    }
+}
+
+.inputs,
+.inputs:focus {
+    background-color: #2b1c40;
+    color: #ddd;
+}
+
+.inputs::placeholder {
+    color: #564861;
+}
+
+.gradient-text {
+    /* font-size: 36px;  */
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #ffdf93, #a1e4ff, #b5fffd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}

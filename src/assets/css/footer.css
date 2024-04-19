@@ -1,0 +1,93 @@
+footer {
+    background: #3A2557;
+}
+
+footer p {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+footer button {
+    font-size: 14px;
+    background: linear-gradient(to right, rgb(204, 69, 196), rgb(121, 68, 188), rgb(66, 119, 182));
+    color: #fff;
+}
+
+footer h2,
+footer h5 {
+    font-size: 18px;
+}
+
+.footerFixedIcon {
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #ffdf93, #a1e4ff, #b5fffd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footerFixed {
+    z-index: 99;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+}
+
+
+
+.footerFixedTitle {
+    font-size: 13px;
+    color: gainsboro;
+}
+
+.footerTitle {
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #ffdf93, #a1e4ff, #b5fffd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.owl-carousel .owl-item img {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.footerGame p {
+    white-space: nowrap;
+}
+
+.followIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgb(242, 242, 244);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:660px) {
+    .footerFixedTitle {
+        font-size: 12px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    .footerGame p {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .owl-carousel .owl-item img {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+@media screen and (max-width:440px) {
+    .footerFixedTitle {
+        font-size: 11px;
+    }
+}

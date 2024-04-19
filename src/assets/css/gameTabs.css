@@ -1,0 +1,165 @@
+ .gameTabContainer {
+     overflow-x: scroll;
+ }
+
+ .gameTabContainer::-webkit-scrollbar {
+     display: none;
+ }
+
+ .gameTab {
+     text-align: center;
+     padding: 0;
+     /* display: flex !important;
+    align-items: center; */
+     margin: 0;
+     gap: 5px;
+     color: #fff !important;
+ }
+
+ .gameTab img {
+     width: 30px;
+     height: 30px;
+ }
+
+ .gameTab p {
+     font-size: 14px;
+     white-space: nowrap;
+
+ }
+
+ .gameCard {
+     width: 100%;
+     height: 250px;
+ }
+
+ .nav-pills .nav-link {
+     font-size: 14px;
+     font-weight: 600;
+     padding: 4px 10px;
+     border-radius: 0;
+     position: relative;
+ }
+
+ .nav-pills .nav-link.active {
+     background: none;
+     border-radius: 8px;
+ }
+
+ .nav-pills .nav-link.active::after {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 3px;
+     background: linear-gradient(to right, rgb(204, 69, 196), rgb(121, 68, 188), rgb(66, 119, 182));
+     border-radius: 5px;
+     /* Match button's border radius */
+ }
+
+ @media screen and (max-width:780px) {
+     .nav-pills .nav-link {
+         font-size: 13px;
+     }
+
+     .gameTab {
+         gap: 2px;
+     }
+
+     .gameTab img {
+         width: 25px;
+         height: 25px;
+     }
+ }
+
+ @media screen and (max-width:710px) {
+     .nav-link {
+         padding: 0 10px;
+     }
+ }
+
+ @media screen and (max-width:610px) {
+     .nav-pills .nav-link {
+         font-size: 12px;
+     }
+
+     .gameTab {
+         gap: 2px;
+     }
+
+     .gameTab img {
+         width: 20px;
+         height: 20px;
+     }
+ }
+
+ .row {
+     --bs-gutter-x: 10px;
+ }
+
+
+
+ @media screen and (max-width:590px) {
+     .gameCard {
+         width: 152;
+         height: 200px;
+     }
+ }
+
+ @media screen and (max-width:560px) {
+     .nav-pills .nav-link {
+         font-size: 12px;
+     }
+ }
+
+ @media screen and (max-width:480px) {
+     .gameCard {
+         width: 142px;
+         height: 180px;
+     }
+ }
+
+
+ @media screen and (max-width:420px) {
+     .gameCard {
+         width: 122px;
+         height: 160px;
+     }
+ }
+
+ @media screen and (max-width:450px) {
+     .gameTab p {
+         font-size: 10px;
+     }
+ }
+
+ @media screen and (max-width:350px) {
+     .gameCard {
+         width: 102px;
+         height: 130px;
+     }
+ }
+
+ @media screen and (max-width:310px) {
+     .gameCard {
+         width: 92px;
+         height: 110px;
+     }
+
+     .gameTab p {
+         font-size: 8px;
+     }
+ }
+
+ @media screen and (max-width:298px) {
+     .gameTab img {
+         width: 18px;
+         height: 18px;
+     }
+ }
+
+ @media screen and (max-width:290px) {
+     .gameTab p {
+         font-size: 7px;
+     }
+ }

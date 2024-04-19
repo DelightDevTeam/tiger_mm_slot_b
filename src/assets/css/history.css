@@ -1,0 +1,82 @@
+.historyTitle {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.gradient-text {
+    /* font-size: 36px;  */
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #ffdf93, #a1e4ff, #b5fffd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.history:hover {
+    cursor: pointer;
+}
+
+.history .active {
+    /* border-bottom: 2px solid #f6e500; */
+    /* color: #ffffff; */
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #ffdf93, #a1e4ff, #b5fffd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+th {
+    background: #431e77 !important;
+    color: #fff !important;
+}
+
+td {
+    background: #fff !important;
+    color: #000 !important;
+    font-weight: 500;
+}
+
+@media screen and (max-width:500px) {
+    .historyTitle {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    th,
+    td {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .historyTitle {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:420px) {
+
+    th,
+    td {
+        font-size: 13px;
+        padding: 8px 2px !important;
+    }
+}
+
+@media screen and (max-width:350px) {
+
+    th,
+    td {
+        font-size: 13px;
+        padding: 3px 2px !important;
+    }
+
+}
+
+@media screen and (max-width:340px) {
+    .historyTitle {
+        font-size: 12px;
+    }
+}
