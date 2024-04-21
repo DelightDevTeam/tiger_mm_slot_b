@@ -74,7 +74,9 @@ const History = () => {
                   {/* <th>ဂိမ်းအခြေအနေ</th> */}
                   <td>{log.closing_balance}</td>
                   <td>{log.type}</td>
-                  <td>{log.product_name}</td>
+                  <td className='btn btn-outline-warning'>
+                    {log.product_name}
+                  </td>
                   <td>{log.amount}</td>
                   <td>{log.datetime}</td>
                 </tr>
