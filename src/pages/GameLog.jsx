@@ -71,7 +71,6 @@ const GameLog = () => {
             {logs &&
               logs.map((log, index) => (
                 <tr key={index}>
-                  <td>{index + 1}</td>
                   <td>{log.from_date}</td>
                   <td>{log.product}</td>
                   <td>{log.total_bet_amount}</td>
