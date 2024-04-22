@@ -73,6 +73,7 @@ const GameLog = () => {
                 <tr key={index}>
                   <td>{log.from_date}</td>
                   <td>{log.product}</td>
+                  <td>{log.total_count}</td>
                   <td>{log.total_bet_amount}</td>
                   <td>{log.total_transaction_amount}</td>
                 </tr>
