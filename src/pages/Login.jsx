@@ -4,15 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import BASE_URL from "../hooks/baseURL";
-
-import logo from '../assets/img/logo.png';
 import Spinner from "../components/Spinner";
-// import flag from '../assets/img/flag.png';
-// import { LuPhoneCall } from "react-icons/lu";
-// import { FiKey } from "react-icons/fi";
 
 const Login = () => {
-    const [playerId, setPlayerId] = useState('');
+    const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [errMsg, setErrMsg] = useState('');
@@ -32,7 +27,7 @@ const Login = () => {
         e.preventDefault();
         setLoading(true);
         const loginData = {
-            user_name: playerId,
+            phone: phone,
             password: password
         };
         // console.log(loginData);
@@ -77,7 +72,7 @@ const Login = () => {
           .then(data => {
             setData(data);
             setLoading(false);
-            console.log(data.data.id);
+            // console.log(data);
             if(data.data.is_changed_password === 0){
               localStorage.setItem("auth", data.data.id)
               navigate('/new-player-change-password');
@@ -113,16 +108,16 @@ const Login = () => {
                     <Form className="mx-2" style={{ color: '#7d64a0' }} onSubmit={login}>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label style={{ fontSize: '14px' }}>PlayerID</Form.Label>
+                            <Form.Label style={{ fontSize: '14px' }}>Phone</Form.Label>
                             <Form.Control 
                             type="text" 
                             className="inputs" 
-                            placeholder="LS01111" 
-                            onChange={(e)=>setPlayerId(e.target.value)}
-                            value={playerId}
+                            placeholder="09xxxx" 
+                            onChange={(e)=>setPhone(e.target.value)}
+                            value={phone}
                             />
-                            {error.user_name && (
-                                <div className="text-danger">*{error.user_name}</div>
+                            {error.phone && (
+                                <div className="text-danger">*{error.phone}</div>
                             )}
                         </Form.Group>
 
