@@ -82,23 +82,23 @@ const Profile = () => {
 
     return (
         <div className="mb-5 px-2 py-5 d-flex flex-column  align-items-center">
-            <h3 className="text-center gradient-text">Profile</h3>
+            <h3 className="text-center gradient-text mb-5">Profile</h3>
             <label htmlFor="profile">
                 {/* <img
                     src={profile}
                     style={{ width: "60px", height: "60px", borderRadius: "100%", cursor: "pointer" }}
                 /> */}
             </label>
-
+            <span className="mb-2"><i className="fa-regular fa-user-circle me-1"></i> {user.name}</span>
+            <span><i className="fas fa-phone-volume me-1"></i> {user.phone}</span>
             <div className="mt-3 d-flex align-items-center gap-2">
                 <i className="fa-solid fa-wallet"></i>
                 <span className="fw-bold">Ks {Number(user.balance).toLocaleString()}</span>
             </div>
-            {/* <p>{user.name}</p> */}
+
             {success && <Alert variant="success">{success}</Alert>}
             {error && <Alert variant="danger">*{error}</Alert>}
-            <Form className="my-4" onSubmit={updateProfile} >
-            {/* <input className="d-none" type="file" id="profile" onChange={handleImage} /> */}
+            {/* <Form className="my-4" onSubmit={updateProfile} >
                 <Form.Group className="mb-3">
                     <Form.Control
                         type="text"
@@ -128,16 +128,15 @@ const Profile = () => {
                         <span className="d-block">ပြောင်းမည်</span>
                     </button>
                 </div>
-                <NavLink to={'/change-password'}>
-                    <div className=" text-center mt-4">
 
-                        <button className=" btn btn-outline-danger w-100 " type="submit" >
-                            Change Password
-                        </button>
-
-                    </div>
-                </NavLink>
-            </Form>
+            </Form> */}
+            <NavLink to={'/change-password'}>
+                <div className=" text-center mt-4">
+                    <button className=" btn btn-outline-danger w-100 " type="submit" >
+                        Change Password
+                    </button>
+                </div>
+            </NavLink>
         </div>
     );
 };
