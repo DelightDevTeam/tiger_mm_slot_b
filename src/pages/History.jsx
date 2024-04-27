@@ -17,7 +17,7 @@ const History = () => {
   const [url, setUrl] = useState('/transactions?type=');
   const [param, setParam] = useState('today');
   const { data: logs, loading, error } = useFetch(BASE_URL + url + param);
-  console.log(logs);
+  // console.log(logs);
 
   return (
     <div className='py-4 container history' style={{ minHeight: '50vh' }}>
@@ -74,8 +74,8 @@ const History = () => {
                   {/* <th>ဂိမ်းအခြေအနေ</th> */}
                   <td>{log.closing_balance}</td>
                   <td>{log.type}</td>
-                  <td className='badge text-bg-primary text-wrap'>
-                    {log.product_name}
+                  <td>
+                    <span className="badge text-bg-primary">{log.product_name ?? ""}</span>
                   </td>
                   <td>{log.amount}</td>
                   <td>{log.datetime}</td>
