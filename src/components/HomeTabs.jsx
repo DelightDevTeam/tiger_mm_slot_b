@@ -17,8 +17,8 @@ function HomeTabs() {
   const fishCode = gameTypes[3]?.code;
 
   const lauchGame = (productCode, gameTypeCode) => {
-    console.log('productCode', productCode);
-    console.log('gameTypeCode', gameTypeCode);
+    // console.log('productCode', productCode);
+    // console.log('gameTypeCode', gameTypeCode);
     let gameData = {
       productId: productCode,
       gameType: gameTypeCode,
@@ -37,14 +37,14 @@ function HomeTabs() {
         if (!response.ok) {
           throw new Error('Launch Game failed');
         }
-        console.log('Launch Game success');
+        // console.log('Launch Game success');
         return response.json();
       })
       .then((data) => {
         // console.log(data.data);
         // window.location.href = data.data;
         window.open(data.Url, '_blank');
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => {
         console.error('Launch Game error:', error);

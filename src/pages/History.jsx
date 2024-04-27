@@ -13,11 +13,13 @@ const History = () => {
       navigate('/login');
     }
   }, [navigate]);
-
-  const [url, setUrl] = useState('/transactions?type=');
   const [param, setParam] = useState('today');
-  const { data: logs, loading, error } = useFetch(BASE_URL + url + param);
-  // console.log(logs);
+  const [url, setUrl] = useState(BASE_URL + "/transactions?type=" + param);
+  const { data: logs, paginate, loading, error } = useFetch(url);
+  const pages = paginate.links;
+  const current_page = paginate.current_page;
+  const per_page = paginate.per_page;
+  // console.log(pages);
 
   return (
     <div className='py-4 container history' style={{ minHeight: '50vh' }}>
@@ -70,7 +72,7 @@ const History = () => {
             {logs &&
               logs.map((log, index) => (
                 <tr key={index}>
-                  <td>{index + 1}</td>
+                  <td>{index + 1 + (current_page - 1) * per_page}</td>
                   {/* <th>ဂိမ်းအခြေအနေ</th> */}
                   <td>{log.closing_balance}</td>
                   <td>{log.type}</td>
@@ -83,6 +85,25 @@ const History = () => {
               ))}
           </tbody>
         </table>
+      </div>
+      <div className="d-flex justify-content-center pb-4">
+        <div className='m-1'>
+          <button onClick={() => setUrl(pages[0]?.url)} className="btn btn-outline-primary" disabled={current_page === 1}>
+            <i className="fas fa-angle-left"></i>
+          </button>
+          </div>
+            {pages && pages.slice(1, -1).map((page, index) => (
+              <div key={index} className='m-1'>
+                <button className={`btn ${page.active ? 'btn-primary' : 'btn-outline-primary'}`} onClick={() => setUrl(page.url)}>
+                  {page.label}
+                </button>
+              </div>
+            ))}
+            <div className='m-1'>
+              <button onClick={() => setUrl(pages[pages.length - 1].url)} className="btn btn-outline-primary" disabled={current_page === (pages?.length - 2)}>
+                <i className="fas fa-angle-right"></i>
+              </button>
+            </div>
       </div>
     </div>
   );

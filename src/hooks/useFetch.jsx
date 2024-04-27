@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const useFetch = (url) => {
   let [data, setData] = useState([]);
+  let [paginate, setPaginate] = useState([]);
   let [loading, setLoading] = useState(false);
   let [error, setError] = useState(null);
   let navigate = useNavigate();
@@ -29,6 +30,7 @@ const useFetch = (url) => {
       })
       .then((data) => {
         setData(data.data);
+        setPaginate(data.meta)
         setLoading(false);
       })
       .catch((e) => {
@@ -43,7 +45,7 @@ const useFetch = (url) => {
     };
   }, [url]);
 
-  return { data, loading, error };
+  return { data, paginate, loading, error };
 };
 
 export default useFetch;

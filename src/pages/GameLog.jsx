@@ -14,11 +14,14 @@ const GameLog = () => {
     }
   }, [navigate]);
 
-  const [url, setUrl] = useState('/wager-logs?type=');
   const [param, setParam] = useState('today');
-  const { data: logs, loading, error } = useFetch(BASE_URL + url + param);
-  // console.log(logs);
-  // const [param, setParam] = useState("today");
+  const [url, setUrl] = useState(BASE_URL + '/wager-logs?type=' + param);
+  const { data: logs, paginate, loading, error } = useFetch(url);
+  const pages = paginate.links;
+  const current_page = paginate.current_page;
+  const per_page = paginate.per_page;
+
+
   return (
     <div className='py-4 container history' style={{ minHeight: '50vh' }}>
       <h3 className='mb-4 mb-sm-5  text-center text-light gradient-text'>
@@ -64,7 +67,7 @@ const GameLog = () => {
               <th>Game Brand</th>
               <th>Count</th>
               <th>TotalBetAmount</th>
-              <th>TotalNetWin</th>
+              <th>Win/Lose</th>
             </tr>
           </thead>
           <tbody>
@@ -80,6 +83,25 @@ const GameLog = () => {
               ))}
           </tbody>
         </table>
+        <div className="d-flex justify-content-center pb-4">
+          <div className='m-1'>
+            <button onClick={() => setUrl(pages[0]?.url)} className="btn btn-outline-primary" disabled={current_page === 1}>
+              <i className="fas fa-angle-left"></i>
+            </button>
+            </div>
+              {pages && pages.slice(1, -1).map((page, index) => (
+                <div key={index} className='m-1'>
+                  <button className={`btn ${page.active ? 'btn-primary' : 'btn-outline-primary'}`} onClick={() => setUrl(page.url)}>
+                    {page.label}
+                  </button>
+                </div>
+              ))}
+              <div className='m-1'>
+                <button onClick={() => setUrl(pages[pages.length - 1].url)} className="btn btn-outline-primary" disabled={current_page === (pages?.length - 2)}>
+                  <i className="fas fa-angle-right"></i>
+                </button>
+              </div>
+        </div>
       </div>
     </div>
   );
