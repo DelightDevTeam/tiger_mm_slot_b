@@ -14,6 +14,7 @@ import { FaTelegramPlane } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
+  const auth = localStorage.getItem('token');
   const menu = [
     { id: 1, title: 'Home', link: '/' },
     { id: 2, title: 'Promotion', link: '/promotion' },
@@ -58,9 +59,12 @@ const Footer = () => {
           pariatur voluptas tenetur at ut atque quisquam corrupti unde repellat
           omnis.
         </p>
-        <NavLink to={'/login'}>
-          <button className='py-2 px-5'>LOGIN</button>
-        </NavLink>
+        {!auth && (
+          <NavLink to={'/login'}>
+            <button className='py-2 px-5'>LOGIN</button>
+          </NavLink>
+        )}
+
       </div>
       <div className=' '>
         <div className=' mt-sm-5 mt-lg-0'>
