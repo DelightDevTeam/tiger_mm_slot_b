@@ -59,11 +59,11 @@ const Footer = () => {
           pariatur voluptas tenetur at ut atque quisquam corrupti unde repellat
           omnis.
         </p>
-        {!auth && (
+        {/* {!auth && (
           <NavLink to={'/login'}>
             <button className='py-2 px-5'>LOGIN</button>
           </NavLink>
-        )}
+        )} */}
 
       </div>
       <div className=' '>
