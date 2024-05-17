@@ -22,12 +22,7 @@ const Profile = () => {
         setPhone(user.phone)
         // setProfile(user.profile)
     }, [user])
-
-    // console.log(profile);
-    // const handleImage = (e) => {
-    //     e.preventDefault();
-    //     setProfile(e.target.files[0]);
-    // }
+    console.log(user);
 
     const updateProfile = async (e) => {
         e.preventDefault();
@@ -94,6 +89,21 @@ const Profile = () => {
             <div className="mt-3 d-flex align-items-center gap-2">
                 <i className="fa-solid fa-wallet"></i>
                 <span className="fw-bold">Ks {Number(user.balance).toLocaleString()}</span>
+            </div>
+            <div className="mt-3 d-flex align-items-center gap-2">
+                {/* <i className="fa-solid fa-wallet"></i> */}
+                <span>Bank - </span>
+                <span className="fw-bold">{user.bank}</span>
+            </div>
+            <div className="mt-3 d-flex align-items-center gap-2">
+                {/* <i className="fa-solid fa-wallet"></i> */}
+                <span>Bank Account - </span>
+                <span className="fw-bold">{user.bank_account}</span>
+            </div>
+            <div className="mt-3 d-flex align-items-center gap-2">
+                {/* <i className="fa-solid fa-wallet"></i> */}
+                <span>Account Name - </span>
+                <span className="fw-bold">{user.bank_account_name}</span>
             </div>
 
             {success && <Alert variant="success">{success}</Alert>}
