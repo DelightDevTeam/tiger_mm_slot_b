@@ -21,6 +21,9 @@ const GameLog = () => {
   const current_page = paginate.current_page;
   const per_page = paginate.per_page;
 
+  useEffect(() => {
+    setUrl(BASE_URL + '/wager-logs?type=' + param);
+  }, [param]);
 
   return (
     <div className='py-4 container history' style={{ minHeight: '50vh' }}>
