@@ -7,7 +7,7 @@ import BASE_URL from "../hooks/baseURL";
 import Spinner from "../components/Spinner";
 
 const Login = () => {
-    const [phone, setPhone] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [errMsg, setErrMsg] = useState('');
@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault();
         setLoading(true);
         const loginData = {
-            phone: phone,
+            user_name: "TG-" + username,
             password: password
         };
         // console.log(loginData);
@@ -108,16 +108,24 @@ const Login = () => {
                     <Form className="mx-2" style={{ color: '#7d64a0' }} onSubmit={login}>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label style={{ fontSize: '14px' }}>Phone</Form.Label>
-                            <Form.Control 
-                            type="text" 
-                            className="inputs" 
-                            placeholder="09xxxx" 
-                            onChange={(e)=>setPhone(e.target.value)}
-                            value={phone}
-                            />
-                            {error.phone && (
-                                <div className="text-danger">*{error.phone}</div>
+                            <Form.Label style={{ fontSize: '14px' }}>PlayerID</Form.Label>
+                            <div className="row">
+                              <div className="col-3">
+                                <input type="text" className="form-control" value="TG-" disabled />
+                              </div>
+                              <div className="col-9">
+                                <Form.Control 
+                                type="number" 
+                                className="inputs" 
+                                placeholder="000000" 
+                                onChange={(e)=>setUsername(e.target.value)}
+                                value={username}
+                                />
+                              </div>
+                            </div>
+
+                            {error.user_name && (
+                                <div className="text-danger">*{error.user_name}</div>
                             )}
                         </Form.Group>
 
